@@ -1,6 +1,8 @@
 ## Overview
+![Screenshot 2025-06-02 142507](https://github.com/user-attachments/assets/5a1c68d8-8a23-4e45-bb4b-abe757c14268)
 
-**Portfolio App** is a Next.js-based web application designed for viewing and interacting with image in a responsive, mobile-optimized gallery interface.
+**Portfolio App** 
+ a Next.js-based web application designed for viewing and interacting with image in a responsive, mobile-optimized gallery interface.
 
 ### Key Features
 - **Image Gallery**:
@@ -188,17 +190,18 @@ npm run start
   }
   ```
 
+![Screenshot 2025-06-02 142723](https://github.com/user-attachments/assets/8e68d053-117a-4459-8d17-92a8ae4869d8)
+  
+
 ## Future Improvements
 - **Settings Component**: Add a UI to adjust column widths and other styles dynamically.
-- **Tag Management**: Implement tag filtering UI for the Image Gallery.
+- **Tag Management**: Implement automatic tag creation for the Image Gallery with BLIP or CLIP via transformers
 - **Error Handling**: Enhance error messages for failed API requests or asset loading.
 - **Accessibility**: Add ARIA labels and keyboard navigation for improved accessibility.
 - **Performance**: Optimize video previews with lower resolution or shorter clips.
 - **Interface**: Optimize JSON viewer, readability, transitions, animations, etc
-- **Tagging**: Optimize tagging scripts to use transformers, WD-tagging or BLIP caption description or manual captioning automation
 - **Paths**: Change paths to an INI file rather than using env variables
-- **Middleware**: Expand support for SSL and session management
-- **Pages**: Create landing page and move gallery to /gallery
+- **Middleware**: Expand support for FTP/SSL and session management
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
