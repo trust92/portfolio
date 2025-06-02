@@ -57,8 +57,33 @@
    npm run dev
    ```
    - Access the app at `http://localhost:3000` (or `http://10.0.0.75:3000` for network access).
-   - Alternatively, run `python -m http.server`
+   - Alternatively, run `python -m http.server` to serve on `http://localhost:8000` + `--bind 0.0.0.0` (optional)
    - Follow security protocols for production deployment.
+
+
+
+
+
+### Image Gallery (`/`)
+- The Image Gallery displays a grid of images
+
+#### Features
+- **Grid Layout**: Images are displayed in a responsive grid with a default column width (customizable via `--gallery-column-width-gallery`).
+- **Infinite Scrolling**: Loads 16 images per page, with more loaded as you scroll.
+- **Lazy Loading**: Optimized image loading
+- **Image Popup**:
+  - Click an image to open a full-screen popup.
+  - Navigate to previous/next images using buttons or swipe left/right.
+  - Close the popup by clicking "Close"
+- **No Shadows**: Thumbnails have no shadows for a clean look.
+- **Zoom Animation**: Cards zoom in slightly on elevation.
+
+#### How to Use
+1. Visit `http://localhost:3000/`.
+2. Scroll down to load more images (16 per page).
+3. Click an image to open a full-screen popup.
+4. Use navigation buttons or swipe left/right to browse images.
+5. Swipe up/down or click "Close" to exit the popup.
 
 ### Styling Customization
 The app uses CSS custom properties in `globals.css` for dynamic styling. To customize styles (e.g., column widths), you can:
@@ -104,9 +129,9 @@ The app uses CSS custom properties in `globals.css` for dynamic styling. To cust
 ## Troubleshooting
 
 ### Common Issues
-1. **Images Not Loading**:
-   - Verify files exist in `/public/gallery`.
-   - Check API responses for correct paths. `curl localhost:3000/api/gallery`
+1. **Videos/Images Not Loading**:
+   - Verify files exist in `/public/videos`, `/public/thumbnails/preview`, or `/public/images`.
+   - Check API responses for correct `url`, `thumbnail`, and `preview` paths.
    - Ensure CORS is configured if assets are served from a different domain.
 2. **Font Not Loading**:
    - Confirm `OCR-A.ttf` is in `/public/OCR-A.ttf`.
@@ -123,7 +148,8 @@ The app uses CSS custom properties in `globals.css` for dynamic styling. To cust
 
 ### Debugging
 - Open browser DevTools (F12) and check the **Network** tab for failed requests.
-- Review the **Console** for errors (e.g., API failures, image load errors).
+- Review the **Console** for errors (e.g., API failures, image/video load errors).
+- Enable logging in `lib/logger.ts` for detailed debug output.
 
 ## Development
 
